@@ -8,7 +8,7 @@ const { NODE_TYPE } = process.env;
 
 const config = {
   event: {
-    env: "./.env.event",
+    env: "./.env.dev",
     outputPath: "build/event",
   },
   exam: {

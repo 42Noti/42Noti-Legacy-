@@ -3,7 +3,7 @@ import path from "path";
 const { NODE_TYPE } = process.env;
 
 if (NODE_TYPE === "event") {
-  require("dotenv").config({ path: path.join(process.env.PWD, "/.env.event") });
+  require("dotenv").config({ path: path.join(process.env.PWD, "/.env.dev") });
 } else if (NODE_TYPE === "exam") {
   require("dotenv").config({ path: path.join(process.env.PWD, "/.env.exam") });
 } else {
