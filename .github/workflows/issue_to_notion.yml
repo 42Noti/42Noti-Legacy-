@@ -10,7 +10,7 @@ jobs:
         uses: dodo4114/issue-to-notion@v1.1.1
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          DATABASE_URL: "https://www.notion.so/Github-Issues-45dba713563c4d05a4ad356bfb2ea22f"
+          DATABASE_URL: "https://www.notion.so/nouswong/github-issues-6ae16e2c3e42434ab58ba72d5f2ff5dd"
           PROPERTY_NAME : "status"
           STATE_OPEN : "open"
           STATE_CLOSED : "closed"
