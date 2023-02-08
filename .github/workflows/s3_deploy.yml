@@ -4,7 +4,7 @@ name: dev-build-and-deploy
 on:
   push:
     branches:
-      - dev
+      - develop
 jobs:
   # To build the project
   build-tambola:
