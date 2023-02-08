@@ -81,7 +81,7 @@ export default function NavBar() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {["로그인", "To-do", "마이페이지"].map((text, index) => (
+        {["홈", "로그인", "To-do", "마이페이지"].map((text, index) => (
           <Link
             href="/"
             style={{ color: "black", textDecoration: "none" }}
@@ -113,7 +113,7 @@ export default function NavBar() {
 
   return (
     <React.Fragment key="left">
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, minWidth: 650 }}>
         <AppBar position="static" color="default">
           <Toolbar>
             <SideBarButton />
