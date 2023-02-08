@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Profile from "../components/mypage/Profile";
-import AttendanceInfo from "../components/mypage/AttendanceInfo";
+import Profile from "@/components/mypage/Profile";
+import AttendanceInfo from "@/components/mypage/AttendanceInfo";
 import { Divider } from "@mui/material";
 
 const MyPage = () => {
