@@ -21,6 +21,8 @@ export default function App({ Component, pageProps }) {
           margin: 30px auto; /* 페이지 중앙에 나타나도록 설정 */
           display: flex;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
 
         // tablet : 480px ~ 768px
