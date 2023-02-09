@@ -152,7 +152,7 @@ export default function NavBar() {
 
   return (
     <React.Fragment key="left">
-      <Box sx={{ flexGrow: 1, minWidth: 650 }}>
+      <Box sx={{ flexGrow: 1, minWidth: 320 }}>
         <AppBar position="static" color="default">
           <Toolbar>
             <SideBarButton />
