@@ -30,4 +30,4 @@ jobs:
       - name: Deploy to S3 bucket
         run: aws s3 sync ./out/ s3://42manager --delete
       - name: Deploy from S3 to CloudFront
-        run: aws cloudfront create-invalidation --profile=github_42manager --distribution-id E27L5334TOZP3T --paths /*
+        run: aws cloudfront create-invalidation --distribution-id E27L5334TOZP3T --paths /*
