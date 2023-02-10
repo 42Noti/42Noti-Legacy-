@@ -1,27 +1,5 @@
 import { combineReducers, createStore } from "redux";
 
-const CREATE_TODO = "add";
-const TOGGLE_TODO = "toggle";
-const DELETE_TODO = "delete";
-
-const INCREMENT_ID = "increment";
-
-export const incrementId = () => {
-  return { type: INCREMENT_ID };
-};
-
-export const addToDo = (text) => {
-  return { type: CREATE_TODO, todo: text };
-};
-
-export const toggleToDo = () => {
-  return { type: TOGGLE_TODO };
-};
-
-export const deleteToDo = (id) => {
-  return { type: DELETE_TODO, id: id };
-};
-
 const idReducer = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT_ID":
