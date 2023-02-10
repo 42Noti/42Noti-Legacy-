@@ -11,9 +11,9 @@ const TodoCatBlock = styled.div`
 function TodoCategory() {
   return (
     <TodoCatBlock>
-      <TodoCatItem text="42" />
-      <TodoCatItem text="공부계획" />
-      <TodoCatItem text="건강관리" />
+      <TodoCatItem name="42" />
+      <TodoCatItem name="공부계획" />
+      <TodoCatItem name="건강관리" />
     </TodoCatBlock>
   );
 }

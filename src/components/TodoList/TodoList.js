@@ -12,15 +12,14 @@ const TodoListBlock = styled.div`
 
 function TodoList() {
   const todos = useSelector((state) => state.toDo);
-
   return (
     <TodoListBlock>
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
           id={todo.id}
-          text={todo.text}
-          done={todo.done}
+          content={todo.content}
+          isDone={todo.isDone}
         />
       ))}
     </TodoListBlock>

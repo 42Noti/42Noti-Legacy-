@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from "redux";
 
-const idReducer = (state = 0, action) => {
+const idReducer = (state = 4, action) => {
   switch (action.type) {
     case "INCREMENT_ID":
       return state + 1;
@@ -13,23 +13,23 @@ const todoReducer = (
   state = [
     {
       id: 1,
-      text: "서브젝트 읽기",
-      done: true,
+      content: "서브젝트 읽기",
+      isDone: true,
     },
     {
       id: 2,
-      text: "파이프 개념 공부",
-      done: true,
+      content: "파이프 개념 공부",
+      isDone: true,
     },
     {
       id: 3,
-      text: "동료학습",
-      done: false,
+      content: "동료학습",
+      isDone: false,
     },
     {
       id: 4,
-      text: "평가 받기",
-      done: false,
+      content: "평가 받기",
+      isDone: false,
     },
   ],
   action
@@ -39,7 +39,7 @@ const todoReducer = (
       return state.concat(action.todo);
     case "TOGGLE":
       return state.map((todo) =>
-        todo.id === action.id ? { ...todo, done: !todo.done } : todo
+        todo.id === action.id ? { ...todo, isDone: !todo.isDone } : todo
       );
     case "REMOVE":
       return state.filter((todo) => todo.id !== action.id);
