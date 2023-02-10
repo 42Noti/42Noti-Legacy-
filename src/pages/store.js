@@ -9,7 +9,31 @@ const idReducer = (state = 0, action) => {
   }
 };
 
-const todoReducer = (state = [], action) => {
+const todoReducer = (
+  state = [
+    {
+      id: 1,
+      text: "서브젝트 읽기",
+      done: true,
+    },
+    {
+      id: 2,
+      text: "파이프 개념 공부",
+      done: true,
+    },
+    {
+      id: 3,
+      text: "동료학습",
+      done: false,
+    },
+    {
+      id: 4,
+      text: "평가 받기",
+      done: false,
+    },
+  ],
+  action
+) => {
   switch (action.type) {
     case "CREATE":
       return state.concat(action.todo);
