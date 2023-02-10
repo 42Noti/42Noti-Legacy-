@@ -15,6 +15,7 @@ function TodoCategory() {
     <TodoCatBlock>
       {todoCat.map((category) => (
         <TodoCatItem
+          key={category.id}
           id={category.id}
           name={category.name}
           color={category.color}
