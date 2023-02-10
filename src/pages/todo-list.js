@@ -1,6 +1,6 @@
 const ToDoList = () => {
   return (
-    <div className="global-container">
+    <div>
       <h1>todo list</h1>;
     </div>
   );

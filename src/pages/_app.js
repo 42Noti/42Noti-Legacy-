@@ -4,9 +4,13 @@ import NavBar from "@/components/common/NavBar";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <NavBar />
-      <Component {...pageProps} />
-      <style jsx global>{`
+      <div className="global-container">
+        <div>
+          <NavBar />
+          <Component {...pageProps} />
+        </div>
+      </div>
+      <style jsx>{`
         // mobile : 320px ~ 480px
         .global-container {
           width: 100%;

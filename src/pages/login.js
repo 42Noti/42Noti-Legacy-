@@ -1,6 +1,6 @@
 const Login = () => {
   return (
-    <div className="global-container">
+    <div>
       <h1>login</h1>;
     </div>
   );
