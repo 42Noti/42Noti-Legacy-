@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
-import { useTodoState } from "./src/TodoContext";
+import { useSelector, useDispatch } from "react-redux";
 
 const TodoListBlock = styled.div`
   flex: 1;
@@ -11,7 +11,7 @@ const TodoListBlock = styled.div`
 `;
 
 function TodoList() {
-  const todos = useTodoState();
+  const todos = useSelector((state) => state.toDo);
 
   return (
     <TodoListBlock>
