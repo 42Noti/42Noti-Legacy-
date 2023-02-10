@@ -76,7 +76,7 @@ export default function NavBar() {
 
   const setLink = (text) => {
     if (text === "홈") return "/";
-    else if (text === "To-Do") return "/";
+    else if (text === "To-Do") return "/todo-list";
     else if (text === "마이페이지") return "/mypage";
     else if (text === "42 Intra") return "https://profile.intra.42.fr/";
     else if (text === "Gather")
