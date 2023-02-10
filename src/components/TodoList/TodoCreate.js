@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { MdAdd } from "react-icons/md";
-// import { useTodoDispatch, useTodoNextId } from "./src/TodoContext";
 import { useSelector, useDispatch } from "react-redux";
 
 const InsertFormPositioner = styled.div`
@@ -45,8 +43,8 @@ function TodoCreate() {
       type: "CREATE",
       todo: {
         id: id + 1,
-        text: value,
-        done: false,
+        content: value,
+        isDone: false,
       },
     });
     setValue("");
@@ -67,7 +65,6 @@ function TodoCreate() {
           </InsertForm>
         </InsertFormPositioner>
       }
-      <MdAdd />
     </>
   );
 }
