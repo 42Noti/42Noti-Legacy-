@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import instance from "@/pages/api/api";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+// global로 옮기기
 const { palette } = createTheme();
 const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
@@ -14,12 +15,8 @@ const theme = createTheme({
 });
 
 const LoginButton = ({ type, disabled }) => {
-  const requestLogin = async () => {
-    let response;
-    try {
-      response = await instance.get(``);
-    } catch (e) {}
-    console.log(response);
+  const requestLogin = () => {
+    window.location.href = "https://www.42seoul.link/42oauth/authorize";
   };
 
   return (
