@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
 import TodoCatItem from "./TodoCatItem";
 
 const TodoCatBlock = styled.div`
@@ -9,11 +10,16 @@ const TodoCatBlock = styled.div`
 `;
 
 function TodoCategory() {
+  const todoCat = useSelector((state) => state.category);
   return (
     <TodoCatBlock>
-      <TodoCatItem name="42" />
-      <TodoCatItem name="공부계획" />
-      <TodoCatItem name="건강관리" />
+      {todoCat.map((category) => (
+        <TodoCatItem
+          id={category.id}
+          name={category.name}
+          color={category.color}
+        />
+      ))}
     </TodoCatBlock>
   );
 }

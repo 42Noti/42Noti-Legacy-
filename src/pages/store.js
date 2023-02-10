@@ -49,9 +49,33 @@ const todoReducer = (
   }
 };
 
+const catReducer = (
+  state = [
+    {
+      id: 1,
+      name: "42cursus",
+      color: "#56AA7A",
+    },
+    {
+      id: 2,
+      name: "공부계획",
+      color: "#56AA7A",
+    },
+    {
+      id: 3,
+      name: "건강관리",
+      color: "#56AA7A",
+    },
+  ],
+  action
+) => {
+  return state;
+};
+
 const rootReducer = combineReducers({
   id: idReducer,
   toDo: todoReducer,
+  category: catReducer,
 });
 
 const store = createStore(rootReducer);

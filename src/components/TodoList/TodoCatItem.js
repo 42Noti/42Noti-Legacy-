@@ -25,7 +25,7 @@ const theme = {
   main: "mediumseagreen",
 };
 
-function TodoCatItem({ id, name }) {
+function TodoCatItem({ id, name, color }) {
   return (
     <span>
       <Button>{name}</Button>
