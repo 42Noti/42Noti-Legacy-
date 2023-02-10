@@ -22,7 +22,7 @@ const MyPage = () => {
           display: flex;
           flex-direction: column;
           margin: auto;
-          width: 90%;
+          width: 80%;
         }
 
         h1 {
