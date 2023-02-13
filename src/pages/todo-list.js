@@ -1,7 +1,15 @@
+import Calendar from "@/components/TodoList/Calendar";
+import TodoCategory from "@/components/TodoList/TodoCategory";
+import TodoList from "@/components/TodoList/TodoList";
+import TodoCreate from "@/components/TodoList/TodoCreate";
+
 const ToDoList = () => {
   return (
     <div>
-      <h1>todo list</h1>;
+      <Calendar />
+      <TodoCategory />
+      <TodoList />
+      <TodoCreate />
     </div>
   );
 };

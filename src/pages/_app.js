@@ -1,13 +1,17 @@
 import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
+import { Provider } from "react-redux";
+import store from "./store";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <div className="global-container">
         <div>
-          <NavBar />
-          <Component {...pageProps} />
+          <Provider store={store}>
+            <NavBar />
+            <Component {...pageProps} />
+           </Provider>
         </div>
       </div>
       <style jsx>{`

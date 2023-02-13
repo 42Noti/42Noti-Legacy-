@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
-import { useTodoDispatch } from "./src/TodoContext";
+import { useDispatch } from "react-redux";
 
 const Remove = styled.div`
   display: flex;
@@ -40,34 +40,34 @@ const CheckCircle = styled.div`
   margin-right: 20px;
   cursor: pointer;
   ${(props) =>
-    props.done &&
+    props.isDone &&
     css`
       border: 1px solid #38d9a9;
       color: #38d9a9;
     `}
 `;
 
-const Text = styled.div`
+const Content = styled.div`
   flex: 1;
   font-size: 21px;
   color: #495057;
   ${(props) =>
-    props.done &&
+    props.isDone &&
     css`
       color: #ced4da;
     `}
 `;
 
-function TodoItem({ id, done, text }) {
-  const dispatch = useTodoDispatch();
+function TodoItem({ id, isDone, content }) {
+  const dispatch = useDispatch();
   const onToggle = () => dispatch({ type: "TOGGLE", id });
   const onRemove = () => dispatch({ type: "REMOVE", id });
   return (
     <TodoItemBlock>
-      <CheckCircle done={done} onClick={onToggle}>
-        {done && <MdDone />}
+      <CheckCircle isDone={isDone} onClick={onToggle}>
+        {isDone && <MdDone />}
       </CheckCircle>
-      <Text done={done}>{text}</Text>
+      <Content isDone={isDone}>{content}</Content>
       <Remove onClick={onRemove}>
         <MdDelete />
       </Remove>
