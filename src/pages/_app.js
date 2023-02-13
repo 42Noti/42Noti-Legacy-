@@ -6,21 +6,24 @@ import store from "./store";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Provider store={store}>
-        <NavBar />
-        <Component {...pageProps} />
-      </Provider>
-      <style jsx global>{`
-        // pc : 768px ~
+      <div className="global-container">
+        <div>
+          <Provider store={store}>
+            <NavBar />
+            <Component {...pageProps} />
+           </Provider>
+        </div>
+      </div>
+      <style jsx>{`
+        // mobile : 320px ~ 480px
         .global-container {
-          width: 40%;
-          min-width: 650px;
+          width: 100%;
+          min-width: 320px;
           height: 90%;
           min-height: 700px;
-          font-size: 12px;
+          font-size: 10px;
           background: #eeeeee;
           border-radius: 20px;
-          // border: solid pink 1px;
           // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
           margin: 30px auto; /* 페이지 중앙에 나타나도록 설정 */
           display: flex;
@@ -29,21 +32,24 @@ export default function App({ Component, pageProps }) {
 
         // tablet : 480px ~ 768px
         // @media screen and (min-width: 480px) and (min-height: 600px) {
-        //   .global {
+        //   .global-container {
+        //     width: 40%;
+        //     min-width: 450px;
+        //     height: 90%;
+        //     min-height: 550px;
         //     // width: 450px;
         //     // height: 550px;
-        //     font-size: 14px;
+        //     font-size: 11px;
         //   }
         // }
 
-        // mobile : 320px ~ 480px
-        // @media screen and (min-width: 320px) and (min-height: 400px) {
-        //   .global {
-        //     // width: 280px;
-        //     // height: 350px;
-        //     font-size: 12px;
-        //   }
-        // }
+        // pc : 768px ~
+        @media screen and (min-width: 650px) {
+          .global-container {
+            width: 40%;
+            min-width: 650px;
+          }
+        }
       `}</style>
     </>
   );

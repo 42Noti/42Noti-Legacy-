@@ -5,7 +5,7 @@ import TodoCreate from "@/components/TodoList/TodoCreate";
 
 const ToDoList = () => {
   return (
-    <div className="global-container">
+    <div>
       <Calendar />
       <TodoCategory />
       <TodoList />

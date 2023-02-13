@@ -7,8 +7,8 @@ const MyPage = () => {
   const [isWallet, setIsWallet] = useState(false);
   return (
     <>
-      <div className="global-container">
-        <div className="mypage-container">
+      <div className="mypage-container">
+        <div className="blank">
           <h1>User Info.</h1>
           <Divider />
           <Profile />
@@ -22,7 +22,11 @@ const MyPage = () => {
           display: flex;
           flex-direction: column;
           margin: auto;
-          width: 90%;
+          width: 80%;
+        }
+
+        .blank {
+          margin-top: 5%;
         }
 
         h1 {
