@@ -13,7 +13,6 @@ const Remove = styled.div`
   &:hover {
     color: #ff6b6b;
   }
-  display: none;
 `;
 
 const TodoItemBlock = styled.div`
@@ -21,6 +20,8 @@ const TodoItemBlock = styled.div`
   align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   &:hover {
     ${Remove} {
       display: initial;
