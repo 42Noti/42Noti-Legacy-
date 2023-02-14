@@ -8,6 +8,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { createTheme } from "@mui/material/styles";
+import { Box } from "@mui/material";
+
+const DATE_SIZE = 32;
 
 dayjs.extend(isBetweenPlugin);
 
@@ -100,29 +103,57 @@ export default function Calendar() {
       />
     );
   };
-  //
   return (
-    <div className="calendar">
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <StaticDatePicker
-          displayStaticWrapperAs="desktop"
-          label="Week picker"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderDay={renderWeekPickerDay}
-          renderInput={(params) => <TextField {...params} />}
-          inputFormat="'Week of' MMM d"
-        />
-      </LocalizationProvider>
+    <>
+      <div className="calendar">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Box
+            sx={{
+              "& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
+                height: 300,
+              },
+              "& .MuiTypography-caption": {
+                width: DATE_SIZE,
+                margin: 0,
+              },
+              "& .PrivatePickersSlideTransition-root": {
+                minHeight: DATE_SIZE * 6,
+              },
+              '& .PrivatePickersSlideTransition-root [role="row"]': {
+                margin: 0,
+              },
+              "& .MuiPickersDay-dayWithMargin": {
+                margin: 0,
+              },
+              "& .MuiPickersDay-root": {
+                width: DATE_SIZE,
+                height: DATE_SIZE,
+              },
+            }}
+          >
+            <StaticDatePicker
+              displayStaticWrapperAs="desktop"
+              label="Week picker"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderDay={renderWeekPickerDay}
+              renderInput={(params) => <TextField {...params} />}
+              inputFormat="'Week of' MMM d"
+              disableFuture
+            />
+          </Box>
+        </LocalizationProvider>
+      </div>
       <style jsx>
         {`
           .calendar {
-            margin-top: 10%;
+            margin-top: 25px;
+            height: 300px;
           }
         `}
       </style>
-    </div>
+    </>
   );
 }
