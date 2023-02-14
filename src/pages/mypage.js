@@ -23,6 +23,7 @@ const MyPage = () => {
           flex-direction: column;
           margin: auto;
           width: 80%;
+          height: 100%;
         }
 
         .blank {
