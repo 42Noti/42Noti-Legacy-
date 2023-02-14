@@ -150,7 +150,6 @@ export default function Calendar() {
         {`
           .calendar {
             margin-top: 25px;
-            height: 300px;
           }
         `}
       </style>

@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import NavBar from "@/components/common/NavBar";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../components/common/store";
 
 export default function App({ Component, pageProps }) {
   return (
