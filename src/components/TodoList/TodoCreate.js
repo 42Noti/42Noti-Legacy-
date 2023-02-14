@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const InsertFormPositioner = styled.div`
   width: 100%;
+  height: 56px;
   bottom: 0;
   left: 0;
 `;
@@ -14,9 +15,12 @@ const InsertForm = styled.form`
   padding-top: 5px;
   padding-right: 32px;
   padding-bottom: 5px;
-
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   border-top: 1px solid #e9ecef;
 `;
 
@@ -25,6 +29,7 @@ const Input = styled.input`
   border-radius: 4px;
   border: 1px solid #dee2e6;
   width: 100%;
+  height: 80%;
   outline: none;
   font-size: 18px;
   box-sizing: border-box;

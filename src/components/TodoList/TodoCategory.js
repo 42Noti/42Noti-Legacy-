@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import TodoCatItem from "./TodoCatItem";
 
 const TodoCatBlock = styled.div`
-  padding: 1px 1px;
-  padding-bottom: 1px;
+  height: 56px;
   overflow-y: auto;
 `;
 
