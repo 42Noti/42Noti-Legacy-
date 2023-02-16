@@ -14,14 +14,17 @@ const ToDoList = () => {
       </div>
       <style jsx>
         {`
-          // total height : 700px
-          // nav-bar(56px)
-          // calendar(300 + 25px)
-          // catergory(56px)
-          // list(207px)
-          // create(56px)
           .todo-container {
-            height: 636px;
+            // 100%가 아니라 90%, why?
+            height: 90%;
+            padding-top: 10px;
+            position: relative;
+          }
+
+          @media screen and (min-width: 650px) {
+            .todo-container {
+              padding-top: 25px;
+            }
           }
         `}
       </style>
