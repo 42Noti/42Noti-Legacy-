@@ -22,11 +22,11 @@ const TodoItemBlock = styled.div`
   padding-bottom: 12px;
   margin-left: 12px;
   margin-right: 12px;
-  &:hover {
-    ${Remove} {
-      display: initial;
-    }
-  }
+  // &:hover {
+  //   ${Remove} {
+  //     display: initial;
+  //   }
+  // }
 `;
 
 const CheckCircle = styled.div`
