@@ -12,6 +12,10 @@ body {
   height: 100%;
   width: 100%;
   background-color: #dddddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 /* * {
