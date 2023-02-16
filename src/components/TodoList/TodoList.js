@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 import { useSelector, useDispatch } from "react-redux";
 
 const TodoListBlock = styled.div`
-  height: 207px;
+  height: 40%;
   overflow: auto;
 `;
 

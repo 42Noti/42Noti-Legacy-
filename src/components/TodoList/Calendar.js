@@ -10,7 +10,7 @@ import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { createTheme } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
-const DATE_SIZE = 32;
+const DATE_SIZE = 30;
 
 dayjs.extend(isBetweenPlugin);
 
@@ -110,7 +110,7 @@ export default function Calendar() {
           <Box
             sx={{
               "& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
-                height: 300,
+                height: 250,
               },
               "& .MuiTypography-caption": {
                 width: DATE_SIZE,
@@ -129,6 +129,10 @@ export default function Calendar() {
                 width: DATE_SIZE,
                 height: DATE_SIZE,
               },
+              "& .MuiPickersCalendarHeader-root": {
+                marginTop: 0,
+                marginBottom: 0,
+              },
             }}
           >
             <StaticDatePicker
@@ -142,17 +146,19 @@ export default function Calendar() {
               renderInput={(params) => <TextField {...params} />}
               inputFormat="'Week of' MMM d"
               disableFuture
+              views={["month", "day"]}
             />
           </Box>
         </LocalizationProvider>
       </div>
-      <style jsx>
-        {`
-          .calendar {
-            margin-top: 25px;
-          }
-        `}
-      </style>
+      <style jsx>{`
+        .calendar {
+          height: 45%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </>
   );
 }
