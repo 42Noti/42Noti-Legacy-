@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
         .global-container {
           width: 100%;
           min-width: 320px;
-          height: 90%;
+          height: 100%;
           min-height: 650px;
           font-size: 10px;
           background: #ffffff;
@@ -35,7 +35,6 @@ export default function App({ Component, pageProps }) {
             min-width: 650px;
             height: 90%;
             min-height: 700px;
-            // margin: 0px auto; /* 페이지 중앙에 나타나도록 설정 */
           }
         }
 
