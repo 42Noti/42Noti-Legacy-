@@ -153,7 +153,17 @@ export default function NavBar() {
   return (
     <React.Fragment key="left">
       {/* global-container = header 10% + 페이지-container 90% */}
-      <Box sx={{ minWidth: 320, height: "10%" }}>
+      <Box
+        sx={{
+          minWidth: 320,
+          height: "8%",
+          width: "100%",
+          display: "flex",
+          "& .MuiPaper-root": {
+            justifyContent: "center",
+          },
+        }}
+      >
         <AppBar
           position="static"
           color="default"
