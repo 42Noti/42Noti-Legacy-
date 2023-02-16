@@ -152,13 +152,15 @@ export default function NavBar() {
 
   return (
     <React.Fragment key="left">
-      <Box sx={{ minWidth: 320, height: 56 }}>
+      {/* global-container = header 10% + 페이지-container 90% */}
+      <Box sx={{ minWidth: 320, height: "10%" }}>
         <AppBar
           position="static"
           color="default"
           sx={{
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
+            height: "100%",
           }}
         >
           <Toolbar>
