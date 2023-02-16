@@ -18,10 +18,10 @@ const Remove = styled.div`
 const TodoItemBlock = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
   // &:hover {
   //   ${Remove} {
   //     display: initial;
