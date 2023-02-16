@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
           width: 100%;
           min-width: 320px;
           height: 90%;
-          min-height: 650px;
+          min-height: 600px;
           font-size: 10px;
           background: #ffffff;
           border-radius: 20px;

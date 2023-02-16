@@ -133,6 +133,9 @@ export default function Calendar() {
                 marginTop: 0,
                 marginBottom: 0,
               },
+              "& .MuiPickersCalendarHeader-label": {
+                fontSize: 15,
+              },
             }}
           >
             <StaticDatePicker
