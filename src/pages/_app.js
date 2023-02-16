@@ -17,15 +17,16 @@ export default function App({ Component, pageProps }) {
         .global-container {
           width: 100%;
           min-width: 320px;
-          height: 100%;
+          height: 90%;
           min-height: 650px;
           font-size: 10px;
           background: #ffffff;
           border-radius: 20px;
           // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
           margin: 0px auto; /* 페이지 중앙에 나타나도록 설정 */
-          display: flex;
-          flex-direction: column;
+          // why navbar height is different at each page?
+          // display: flex;
+          // flex-direction: column;
         }
 
         // pc : 768px ~
