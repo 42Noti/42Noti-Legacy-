@@ -76,7 +76,7 @@ export default function NavBar() {
 
   const setLink = (text) => {
     if (text === "홈") return "/";
-    else if (text === "To-Do") return "/";
+    else if (text === "To-Do") return "/todo-list";
     else if (text === "마이페이지") return "/mypage";
     else if (text === "42 Intra") return "https://profile.intra.42.fr/";
     else if (text === "Gather")
@@ -152,8 +152,27 @@ export default function NavBar() {
 
   return (
     <React.Fragment key="left">
-      <Box sx={{ flexGrow: 1, minWidth: 650 }}>
-        <AppBar position="static" color="default">
+      {/* global-container = header 10% + 페이지-container 90% */}
+      <Box
+        sx={{
+          minWidth: 320,
+          height: "8%",
+          width: "100%",
+          display: "flex",
+          "& .MuiPaper-root": {
+            justifyContent: "center",
+          },
+        }}
+      >
+        <AppBar
+          position="static"
+          color="default"
+          sx={{
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            height: "100%",
+          }}
+        >
           <Toolbar>
             <SideBarButton />
             <MainLogo />

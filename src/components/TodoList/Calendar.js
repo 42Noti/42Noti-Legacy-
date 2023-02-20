@@ -8,26 +8,27 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 import { PickersDay } from "@mui/x-date-pickers/PickersDay";
 import { createTheme } from "@mui/material/styles";
+import { Box } from "@mui/material";
+
+const DATE_SIZE = 30;
 
 dayjs.extend(isBetweenPlugin);
 
 const theme = createTheme({
   palette: {
-    list: {
-      black: "#000000",
-      0: "#FFFFFF",
-      1: "#DEF5E5",
-      2: "#BCEAD5",
-      3: "#9ED5C5",
-      4: "#8EC3B0",
-    }, // Used by `getContrastText()` to maximize the contrast between
-    // the background and the text.
-    contrastThreshold: 3,
-    // Used by the functions below to shift a color's luminance by approximately
-    // two indexes within its tonal palette.
-    // E.g., shift from Red 500 to Red 300 or Red 700.
-    tonalOffset: 0.2,
-  },
+    black: "#000000",
+    0: "#FFFFFF",
+    1: "#DEF5E5",
+    2: "#BCEAD5",
+    3: "#9ED5C5",
+    4: "#8EC3B0",
+  }, // Used by `getContrastText()` to maximize the contrast between
+  // the background and the text.
+  contrastThreshold: 3,
+  // Used by the functions below to shift a color's luminance by approximately
+  // two indexes within its tonal palette.
+  // E.g., shift from Red 500 to Red 300 or Red 700.
+  tonalOffset: 0.2,
 });
 
 const CustomPickersDay = styled(PickersDay, {
@@ -36,8 +37,8 @@ const CustomPickersDay = styled(PickersDay, {
 })(({ theme, count }) => ({
   ...{
     borderRadius: 0,
-    backgroundColor: theme.palette.list[count],
-    color: theme.palette.list.black,
+    backgroundColor: theme.palette[count],
+    color: theme.palette.black,
     "&:hover, &:focus": {
       backgroundColor: theme.palette.primary.dark,
     },
@@ -102,20 +103,65 @@ export default function Calendar() {
       />
     );
   };
-  //
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <StaticDatePicker
-        displayStaticWrapperAs="desktop"
-        label="Week picker"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        renderDay={renderWeekPickerDay}
-        renderInput={(params) => <TextField {...params} />}
-        inputFormat="'Week of' MMM d"
-      />
-    </LocalizationProvider>
+    <>
+      <div className="calendar">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Box
+            sx={{
+              "& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
+                height: 250,
+              },
+              "& .MuiTypography-caption": {
+                width: DATE_SIZE,
+                margin: 0,
+              },
+              "& .PrivatePickersSlideTransition-root": {
+                minHeight: DATE_SIZE * 6,
+              },
+              '& .PrivatePickersSlideTransition-root [role="row"]': {
+                margin: 0,
+              },
+              "& .MuiPickersDay-dayWithMargin": {
+                margin: 0,
+              },
+              "& .MuiPickersDay-root": {
+                width: DATE_SIZE,
+                height: DATE_SIZE,
+              },
+              "& .MuiPickersCalendarHeader-root": {
+                marginTop: 0,
+                marginBottom: 0,
+              },
+              "& .MuiPickersCalendarHeader-label": {
+                fontSize: 15,
+              },
+            }}
+          >
+            <StaticDatePicker
+              displayStaticWrapperAs="desktop"
+              label="Week picker"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+              renderDay={renderWeekPickerDay}
+              renderInput={(params) => <TextField {...params} />}
+              inputFormat="'Week of' MMM d"
+              disableFuture
+              views={["month", "day"]}
+            />
+          </Box>
+        </LocalizationProvider>
+      </div>
+      <style jsx>{`
+        .calendar {
+          height: 45%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
+    </>
   );
 }
