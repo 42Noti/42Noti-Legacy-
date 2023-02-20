@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  return (
-    <div className="global-container">
-      <div>
-        <h1>This is index page.</h1>
-      </div>
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/redirect");
+  });
+
+  return <div className="global-container"></div>;
 }
