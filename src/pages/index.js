@@ -5,7 +5,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/redirect");
+    router.push("/todo-list");
   });
 
   return <div className="global-container"></div>;

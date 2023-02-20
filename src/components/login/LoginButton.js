@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import instance from "@/pages/api/api";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // global로 옮기기
@@ -16,9 +15,9 @@ const theme = createTheme({
 
 const LoginButton = ({ type, disabled }) => {
   const requestLogin = async () => {
-    // window.location.href = "https://api.42seoul.link/42oauth/authorize";
-    const response = await instance.get(`/42oauth/authorize`);
-    console.log(response);
+    window.location.href = "https://api.42seoul.link/42oauth/authorize";
+    // const response = await instance.get(`/42oauth/authorize`);
+    // console.log(response);
   };
 
   return (

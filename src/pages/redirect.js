@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import qs from "query-string";
+import instance from "@/pages/api/api";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
@@ -7,7 +9,18 @@ const Redirect = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/todo-list");
+    const test = async () => {
+      const params = qs.parse(window.location.search);
+      const code = params.code;
+      const res1 = await instance.post(`/42oauth/token?${code}`);
+      console.log(res1);
+      const body = { ftAccessToken: res1.data.ftAccessToken };
+      const res2 = await instance.post(`/auth/token/42seoul`, body);
+      console.log(res2);
+    };
+
+    test();
+    // router.push("/todo-list");
   });
   return (
     <>
