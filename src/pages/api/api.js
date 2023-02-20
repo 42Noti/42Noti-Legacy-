@@ -4,7 +4,7 @@ const apiURL = "https://api.42seoul.link";
 
 const instance = axios.create({
   baseURL: apiURL,
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 export default instance;

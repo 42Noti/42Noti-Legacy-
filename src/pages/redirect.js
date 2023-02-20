@@ -12,6 +12,7 @@ const Redirect = () => {
     const test = async () => {
       const params = qs.parse(window.location.search);
       const code = params.code;
+      console.log(code);
       const res1 = await instance.post(`/42oauth/token?code=${code}`);
       console.log(res1);
       const body = { ftAccessToken: res1.data.ftAccessToken };
