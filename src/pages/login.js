@@ -5,8 +5,8 @@ import { Box } from "@mui/system";
 const Login = () => {
   return (
     <>
-      <div className="global-container">
-        <div className="login-container">
+      <div className="login-container">
+        <div className="login-box">
           <Box sx={{ height: "30%" }}>
             <div className="title">로그인</div>
             <div className="subtitle">로그인할 계정을 선택하세요</div>
@@ -17,6 +17,12 @@ const Login = () => {
       </div>
       <style jsx>{`
         .login-container {
+          display: flex;
+          justify-content: center;
+          height: 90%;
+        }
+
+        .login-box {
           display: flex;
           flex-direction: column;
           justify-content: center;
