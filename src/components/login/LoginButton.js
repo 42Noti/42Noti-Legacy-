@@ -16,7 +16,7 @@ const theme = createTheme({
 
 const LoginButton = ({ type, disabled }) => {
   const requestLogin = () => {
-    window.location.href = "https://www.42seoul.link/42oauth/authorize";
+    window.location.href = "https://api.42seoul.link/42oauth/authorize";
   };
 
   return (

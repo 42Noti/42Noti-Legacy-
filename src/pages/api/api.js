@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiURL = "";
+const apiURL = "https://api.42seoul.link";
 
 const instance = axios.create({
   baseURL: apiURL,
