@@ -60,17 +60,16 @@ export default function NavBar() {
 
   const MainLogo = () => {
     return (
-      <Typography
-        variant="h6"
-        component="h1"
-        color="textSecondary"
-        align="center"
-        sx={{ flexGrow: 1 }}
-      >
-        <Link href="/" style={{ textDecoration: "none" }}>
+      <Link href="/" style={{ textDecoration: "none", flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          component="h1"
+          color="textSecondary"
+          align="center"
+        >
           42Manager
-        </Link>
-      </Typography>
+        </Typography>
+      </Link>
     );
   };
 
