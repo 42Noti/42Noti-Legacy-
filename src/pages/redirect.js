@@ -13,11 +13,15 @@ const Redirect = () => {
       const params = qs.parse(window.location.search);
       const code = params.code;
       console.log(code);
-      const res1 = await instance.post(`/42oauth/token?code=${code}`);
-      console.log(res1);
-      const body = { ftAccessToken: res1.data.ftAccessToken };
-      const res2 = await instance.post(`/auth/token/42seoul`, body);
-      console.log(res2);
+      try {
+        const res1 = await instance.post(`/42oauth/token?code=${code}`);
+        console.log("res1", res1);
+        const body = { ftAccessToken: res1.data.ftAccessToken };
+        const res2 = await instance.post(`/auth/token/42seoul`, body);
+        console.log("res2", res2);
+      } catch (e) {
+        console.log("error generated");
+      }
     };
 
     test();
