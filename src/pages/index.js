@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import instance from "./api/api";
 
 export default function Home() {
   const router = useRouter();
