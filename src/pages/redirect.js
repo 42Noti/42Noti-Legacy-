@@ -12,20 +12,25 @@ const Redirect = () => {
     const test = async () => {
       const params = qs.parse(window.location.search);
       const code = params.code;
-      console.log(code);
       try {
         const res1 = await instance.post(`/42oauth/token?code=${code}`);
-        console.log("res1", res1);
-        const body = { ftAccessToken: res1.data.ftAccessToken };
-        const res2 = await instance.post(`/auth/token/42seoul`, body);
-        console.log("res2", res2);
+        const res2 = await instance.post(`/auth/token/42seoul`, {
+          ftAccessToken: res1.data.ftAccessToken,
+        });
+        localStorage.setItem("accessToken", res2.data.accessToken);
+        instance.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${res2.data.accessToken}`;
+        router.push("/todo-list");
       } catch (e) {
-        console.log("error generated");
+        alert("로그인 실패. 다시 로그인 해주세요!");
+        router.push("/login");
       }
     };
 
     test();
-    // router.push("/todo-list");
+    // 의존성 배열이 있을 때랑 없을 떄랑 호출하는 함수가 다름
+    // https://junhyunny.github.io/javascript/react/jest/how-to-test-clean-up/
   }, []);
   return (
     <>
