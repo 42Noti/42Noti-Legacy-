@@ -10,24 +10,14 @@ const login42Url = (path) => {
 
 const LoginService = {
   login: {
-    issueAccessToken: async (body) => {
-      const response = await instance.post(loginUrl(`token/42seoul`), body);
-      return response;
-    },
-    reissueAccessToken: async () => {
-      const response = await instance.patch(loginUrl(`token`));
-      return response;
-    },
+    issueAccessToken: async (body) =>
+      await instance.post(loginUrl(`token/42seoul`), body),
+    reissueAccessToken: async () => await instance.patch(loginUrl(`token`)),
   },
   login42: {
-    issueAccessToken: async (code) => {
-      const response = await instance.post(login42Url(`token?code=${code}`));
-      return response;
-    },
-    reissueAccessToken: async () => {
-      const response = await instance.patch(login42Url(`token`));
-      return response;
-    },
+    issueAccessToken: async (code) =>
+      await instance.post(login42Url(`token?code=${code}`)),
+    reissueAccessToken: async () => await instance.patch(login42Url(`token`)),
   },
 };
 

@@ -12,8 +12,8 @@ const Redirect = () => {
     const getAccessToken = async () => {
       const params = qs.parse(window.location.search);
       let response;
-      response = LoginService.login42.issueAccessToken(params.code);
-      response = LoginService.login.issueAccessToken({
+      response = await LoginService.login42.issueAccessToken(params.code);
+      response = await LoginService.login.issueAccessToken({
         ftAccessToken: response.data.ftAccessToken,
       });
       localStorage.setItem("accessToken", response.data.accessToken);
