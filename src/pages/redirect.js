@@ -11,14 +11,15 @@ const Redirect = () => {
   useEffect(() => {
     const getAccessToken = async () => {
       const params = qs.parse(window.location.search);
-      const resAccess42 = LoginService.login42.issueAccessToken(params.code);
-      const resAccess = LoginService.login.issueAccessToken({
-        ftAccessToken: resAccess42.data.ftAccessToken,
+      let response;
+      response = LoginService.login42.issueAccessToken(params.code);
+      response = LoginService.login.issueAccessToken({
+        ftAccessToken: response.data.ftAccessToken,
       });
-      localStorage.setItem("accessToken", resAccess.data.accessToken);
+      localStorage.setItem("accessToken", response.data.accessToken);
       instance.defaults.headers.common[
         "Authorization"
-      ] = `Bearer ${resAccess.data.accessToken}`;
+      ] = `Bearer ${response.data.accessToken}`;
       router.push("/todo-list");
     };
 
