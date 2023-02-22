@@ -5,7 +5,6 @@ import instance from "./api/api";
 import LoginService from "./api/LoginService";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import { keyframes } from "styled-components";
 
 const Redirect = () => {
   const router = useRouter();
