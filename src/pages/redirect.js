@@ -26,7 +26,7 @@ const Redirect = () => {
 
     test();
     // router.push("/todo-list");
-  });
+  }, []);
   return (
     <>
       <div className="redirect-container">
