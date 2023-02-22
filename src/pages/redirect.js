@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import qs from "query-string";
-import LoginService from "./api/login";
+import LoginService from "./api/LoginService";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
