@@ -9,6 +9,7 @@ logs/
 .env.test
 .env.event
 .env.exam
+.env.sample
 
 ormlogs.log
 yarn-error.log

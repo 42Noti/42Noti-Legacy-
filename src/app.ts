@@ -28,7 +28,7 @@ app.listen(port, async () => {
         Promise.resolve(apiToken())
           .then(() => Promise.resolve(controller()).catch((err) => ErrorFilter(err)))
           .catch((err) => ErrorFilter(err));
-      }, 3000);
+      }, 4000);
     })
     .catch((err) => console.log(err));
 });
