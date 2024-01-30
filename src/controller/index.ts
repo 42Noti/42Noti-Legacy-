@@ -1,11 +1,9 @@
-import axios from "axios";
-import { getCustomRepository, TypeORMError } from "typeorm";
+import { TypeORMError } from "typeorm";
 
 import env from "@modules/env";
 import newEvent from "@modules/new.event";
 import slack, { slackError } from "@modules/slack";
-import { EventRepo } from "@repository/event.repository";
-import { ExamRepo } from "@repository/exam.repository";
+import github from "@modules/github";
 import Http, { HttpRequest } from "@modules/http";
 import Get from "@modules/di";
 import { eventType } from "eventType";
@@ -21,7 +19,7 @@ const checkData = async (value: Array<any>) => {
   newEventValue.map(async (event) => {
     await repository
       .createOne(event)
-      .then(() => slack(event))
+      .then(() => github(event))
       .catch((err: TypeORMError) => {
         throw err;
       });

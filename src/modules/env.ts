@@ -2,6 +2,8 @@ import path from "path";
 
 const { NODE_TYPE } = process.env;
 
+require("dotenv").config({ path: path.join(process.env.PWD, "/.env.api") });
+
 if (NODE_TYPE === "event") {
   require("dotenv").config({ path: path.join(process.env.PWD, "/.env.event") });
 } else if (NODE_TYPE === "exam") {
@@ -17,8 +19,8 @@ const env = {
     type: process.env.TYPE,
   },
   ftConfig: {
-    uid: process.env.FT_API_UID,
-    secret: process.env.FT_API_SECRET,
+    uid: process.env.PAYLOAD_CLIENT_ID,
+    secret: process.env.PAYLOAD_CLIENT_SECRET,
     url: process.env.FT_API_URL,
     path: process.env.FT_API_PATH,
   },
@@ -26,6 +28,11 @@ const env = {
     token: process.env.SLACK_TOKEN,
     channel: process.env.SLACK_CHANNEL,
     errorUri: process.env.SLACK_ERROR_URI,
+  },
+  githubConfig: {
+    owner: process.env.GITHUB_OWNER,
+    repo: process.env.GITHUB_REPO,
+    auth: process.env.GITHUB_TOKEN
   },
   dbConfig: {
     username: process.env.DATABASE_USERNAME,

@@ -53,6 +53,21 @@ const SlackLogger = winston.createLogger({
   ],
 });
 
+const GithubLogger = winston.createLogger({
+  level: "debug",
+  format: printf(({ message }) => `${message}`),
+  transports: [
+    new winstonDaily({
+      level: "debug",
+      datePattern: "YY-MM-DD",
+      dirname: `logs/${env.nodeConfig.type}/github`,
+      filename: "%DATE%.log",
+      maxFiles: "7d",
+      zippedArchive: true,
+    }),
+  ],
+});
+
 const ErrorLogger = winston.createLogger({
   level: "error",
   format: printf(({ message }) => `${message}`),
@@ -84,9 +99,22 @@ class Logger {
       const message: string = `${datetime(new Date(), true)}:${status}:${this.start}:${end}:${ms}`;
 
       await new Promise(() => {
-        if (this.type === "auth") AuthLogger.debug(message);
-        else if (this.type === "event") EventLogger.debug(message);
-        else if (this.type === "slack") SlackLogger.debug(message);
+        switch (this.type) {
+          case "auth":
+            AuthLogger.debug(message);
+            break;
+          case "event":
+            EventLogger.debug(message);
+            break;
+          case "slack":
+            SlackLogger.debug(message);
+            break;
+          case "octokit":
+            GithubLogger.debug(message);
+            break;
+          default:
+            break;
+        }
       });
     }
   }
