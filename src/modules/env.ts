@@ -29,6 +29,11 @@ const env = {
     channel: process.env.SLACK_CHANNEL,
     errorUri: process.env.SLACK_ERROR_URI,
   },
+  githubConfig: {
+    owner: process.env.GITHUB_OWNER,
+    repo: process.env.GITHUB_REPO,
+    auth: process.env.GITHUB_TOKEN
+  },
   dbConfig: {
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
