@@ -32,7 +32,10 @@ const env = {
   githubConfig: {
     owner: process.env.GITHUB_OWNER,
     repo: process.env.GITHUB_REPO,
-    auth: process.env.GITHUB_TOKEN
+    auth: process.env.GITHUB_TOKEN,
+    appId: process.env.APP_ID,
+    privateKey: process.env.APP_PRIVATE_KEY,
+    installationId: process.env.APP_INSTALLATION_ID,
   },
   dbConfig: {
     username: process.env.DATABASE_USERNAME,
