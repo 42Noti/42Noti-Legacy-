@@ -37,6 +37,7 @@ const github = async (event: eventType) => {
 	  );
       logger.latency(200, new Date().getTime());
 	} catch (error) {
+	  logger.error(error);
       repository.deleteOne(event.id);
 	}
 }
